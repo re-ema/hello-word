@@ -1,0 +1,393 @@
+    1  pwd
+    2  cd /
+    3  pwd
+    4  cd c:
+    5  pwd
+    6  cd GitHub/
+    7  git clone https://github.com/re-ema/Repo_GitHub_test_on_Re_Ema
+    8  ls
+    9  cd Repo_GitHub_test_on_Re_Ema/
+   10  ls
+   11  exit
+   12  pwd
+   13  git branch
+   14  ls ./.git/refs/heads/
+   15  ls
+   16  ls -a
+   17  git branch
+   18  Matematici@NB-DELL-MATEMATICI MINGW32 /c/checklyst_dev (development)
+   19  $ git branch
+   20  * development
+   21  Matematici@NB-DELL-MATEMATICI MINGW32 /c/checklyst_dev (development)
+   22  $
+   23  clear
+   24  Matematici@NB-DELL-MATEMATICI MINGW32 /c/checklyst_dev (development)
+   25  $ git branch
+   26  * development
+   27  Matematici@NB-DELL-MATEMATICI MINGW32 /c/checklyst_dev (development)
+   28  $
+   29  clear
+   30  git branch -r
+   31  ls -a
+   32  cd .git
+   33  ls -a
+   34  cd refs
+   35  ls -la
+   36  cd heads
+   37  ls -la
+   38  git remote
+   39  git remote -v
+   40  git remote -v
+   41  git remote
+   42  git remote show origin
+   43  git remote add RemotoGH  https://github.com/re-ema/Repo_GitHub_test_on_Re_Ema
+   44  git remote
+   45  git remote show RemotoGH
+   46  git pull RemotoGH Primo_Ramo
+   47  git config --global credential.helper wincred
+   48  git config --global credential.helper wincred
+   49  git push https://apezzoli@sourcecode.jnj.com/scm/itx-azf/checklyst.git development
+   50  #!/bin/bash
+   51  NAME_RESTORE_DATABASE=$1
+   52  FILE_BKP_DATABASE=$2
+   53  echo $1
+   54  echo $2
+   55  BACKUP_PATH="/var/lib/pgsql/9.6/backups"
+   56  LOG_PATH="/var/lib/pgsql/9.6/backups/logs"
+   57  echo "Inizio Restore: $1" >> $LOG_PATH/log_restore_db.log
+   58  date >>  $LOG_PATH/log_restore_db.log
+   59  psql -U postgres "$1" < $BACKUP_PATH/$2
+   60  if [ $? == 0 ]; then   status=OK; else   status=FAILED; fi
+   61  echo -e "Restore $1: $status File: $2" >> $LOG_PATH/log_restore_db.log
+   62  echo "Fine Restore" >> $LOG_PATH/log_restore_db.log
+   63  echo "***********************************************************" >> $LOG_PATH/log_restore_db.log
+   64  git config --global --unset http.proxy
+   65  git config --global --unset https.proxy
+   66  git config --global --unset core.gitproxy
+   67  pwd
+   68  git remote add origin https://github.com/re-ema/Study.git
+   69  pwd
+   70  ls
+   71  c:\
+   72  cd c:\\
+   73  ls
+   74  cd GitHub_EmaTest
+   75  ls
+   76  git remote add origin https://github.com/re-ema/Study.git
+   77  ls
+   78  cd Stydy
+   79  mkdir Study
+   80  ls
+   81  cd Study/
+   82  git init
+   83  echo "# Study" >> README.md
+   84  ls
+   85  git add README.md
+   86  git commit -m "first commit"
+   87  git branch -M main
+   88  git remote add origin https://github.com/re-ema/Study.git
+   89  git push -u origin main
+   90  git branch
+   91  git branch develop
+   92  git branch
+   93  git checkout develop
+   94  history
+   95  git push -u origin main
+   96  git push -u origin
+   97  git push -u origin develop
+   98  exit
+   99  pwd
+  100  cd C:\Users\Matematici\bonobo\repo
+  101  cd bonobo
+  102  cd repo
+  103  mkdir padovaLand
+  104  ls
+  105  ls
+  106  cd PadovaLand/
+  107  git status
+  108  vi read.me
+  109  ls
+  110  git init
+  111  git status
+  112  git add /?
+  113  git /?
+  114  git add
+  115  git add .
+  116  git add -A
+  117  git status
+  118  git commit -m "my first commit"
+  119  status
+  120  git status
+  121  git remote add origin http://192.168.1.22/Bonobo.Git.Server/PadovaLand
+  122  git push -u origin master
+  123  git remote add origin http://192.168.1.22/Bonobo.Git.Server/PadovaLand.git
+  124  git remove remote
+  125  git --help
+  126  git remote set-url http://192.168.1.22/Bonobo.Git.Server/PadovaLand.git
+  127  git remote set-url --delete http://192.168.1.22/Bonobo.Git.Server/PadovaLand
+  128  git remote -v
+  129  git remote set-url origin 
+  130  git remote set-url origin http://192.168.1.22/Bonobo.Git.Server/PadovaLand.git
+  131  git remote -v
+  132  git push -u origin master
+  133  exit
+  134  ls -ls
+  135  git status
+  136  #!/bin/bash
+  137  sudo rabbitmqctl list_queues > file.txt
+  138  grep dead file.txt > dead.txt
+  139  if grep -v 0 dead.txt; then      echo found ;     (echo "Subject: Check queues from CLM NOT OK! - Attention"; echo "From: e.rossi@nkraidersrl.it"; echo "To: Rossi <rossi@matematici.com>";       echo ""; echo "$(cat dead.txt)") | sudo ssmtp -vvv rossi@matematici.com   ; fi
+  140  rm file.txt
+  141  rm dead.txt
+  142  #!/bin/bash
+  143  #Lo script si trova nella directory: /var/lib/pgsql/script/bkp_pg_db.sh   con i diritti dell'utente: postgres
+  144  #settings
+  145  DATABASES=( postgres CheckListManager )
+  146  DAYOFWEEK=$(date +%F_%H_%M) 
+  147  BACKUP_PATH="/var/lib/pgsql/backups"
+  148  LOG_PATH="/var/lib/pgsql/backups/logs"
+  149  #verificare directory a seconda della versione
+  150  PGDUMP_PATH="/usr/pgsql-13/bin"  
+  151  #procedure
+  152  echo "Inizio Backup" >> $LOG_PATH/log_bkp_db.log
+  153  date >> $LOG_PATH/log_bkp_db.log
+  154  for i in $(seq 0 $((${#DATABASES[@]} - 1))); do         $PGDUMP_PATH/pg_dump -Fc -U postgres "${DATABASES[$i]}" > $BACKUP_PATH/BKP_FC_${DATABASES[$i]}_$DAYOFWEEK.sql; 	if [ $? == 0 ]; then 		status=OK; 	else 		status=FAILED;                 cat message.txt | mailx -s "Backup DB CheckListManager NOT OK! - Attention!!!" daniele.pegoraro@abbvie.com; 	fi; 	echo -e "Backup ${DATABASES[$i]}: $status  File: $BACKUP_PATH/${DATABASES[$i]}_$DAYOFWEEK.sql" >> $LOG_PATH/log_bkp_db.log; done;
+  155  echo "******* remove file older 60 days ***********" >> $LOG_PATH/log_bkp_db.log
+  156  find /var/lib/pgsql/backups -type f -name '*.sql' -mtime +60 -exec rm {} \;
+  157  echo "Fine Backup" >> $LOG_PATH/log_bkp_db.log
+  158  echo "**************************************************************************" >> $LOG_PATH/log_bkp_db.log
+  159  #!/bin/bash
+  160  #Lo script si trova nella directory: /var/lib/pgsql/script/bkp_pg_db.sh   con i diritti dell'utente: postgres
+  161  #settings
+  162  DATABASES=( postgres CheckListManager )
+  163  DAYOFWEEK=$(date +%F_%H_%M) 
+  164  BACKUP_PATH="/var/lib/pgsql/backups"
+  165  LOG_PATH="/var/lib/pgsql/backups/logs"
+  166  #verificare directory a seconda della versione
+  167  PGDUMP_PATH="/usr/pgsql-9.6/bin" 
+  168  #procedure
+  169  echo "Inizio Backup" >> $LOG_PATH/log_bkp_db.log
+  170  date >> $LOG_PATH/log_bkp_db.log
+  171  for i in $(seq 0 $((${#DATABASES[@]} - 1))); do         $PGDUMP_PATH/pg_dump -Fc -U postgres "${DATABASES[$i]}" > $BACKUP_PATH/BKP_FC_${DATABASES[$i]}_$DAYOFWEEK.sql; 	if [ $? == 0 ]; then 		status=OK; 	else 		status=FAILED;                 cat message.txt | mailx -s "Backup DB CheckListManager NOT OK! - Attention!!!" daniele.pegoraro@abbvie.com; 	fi; 	echo -e "Backup ${DATABASES[$i]}: $status  File: $BACKUP_PATH/${DATABASES[$i]}_$DAYOFWEEK.sql" >> $LOG_PATH/log_bkp_db.log; done;
+  172  echo "******* remove file older 60 days ***********" >> $LOG_PATH/log_bkp_db.log
+  173  find /var/lib/pgsql/9.6/backups -type f -name '*.sql' -mtime +60 -exec rm {} \;
+  174  echo "Fine Backup" >> $LOG_PATH/log_bkp_db.log
+  175  echo "**************************************************************************" >> $LOG_PATH/log_bkp_db.log
+  176  #!/bin/bash
+  177  NAME_RESTORE_DATABASE=$1
+  178  FILE_BKP_DATABASE=$2
+  179  echo $1
+  180  echo $2
+  181  BACKUP_PATH="/var/lib/pgsql/backups"
+  182  LOG_PATH="/var/lib/pgsql/backups/logs"
+  183  # impostare directory a seconda della versione dell'eseguibile di PGRESTORE
+  184  PG_RESTORE_PATH="/usr/pgsql-9.6/bin"
+  185  echo "Inizio Restore: $1" >> $LOG_PATH/log_restore_db.log
+  186  date >>  $LOG_PATH/log_restore_db.log
+  187  # psql -U postgres "$1" < $BACKUP_PATH/$2
+  188  $PG_RESTORE_PATH/pg_restore -d "$1" < $BACKUP_PATH/$2
+  189  if [ $? == 0 ]; then   status=OK; else   status=FAILED; fi
+  190  echo -e "Restore $1: $status File: $2" >> $LOG_PATH/log_restore_db.log
+  191  echo "Fine Restore" >> $LOG_PATH/log_restore_db.log
+  192  echo "***********************************************************" >> $LOG_PATH/log_restore_db.log
+  193  *********** Install Python3 ****************************************************
+  194  # cd  /homes/passalx/Installazione_CLM_V3/RabbitMQ_V3.9.10-1_Abbvie_CLM_V3/Python3/
+  195  rpm -Uvh *.rpm
+  196  rpm -qi python3
+  197  *********** Backup configurazione CODE *****************************************
+  198  1. rabbitmq-plugins enable rabbitmq_management
+  199  2. http://{node-hostname}:15672/cli/  ( download rabbitmqadmin e poi copia in /usr/local/bin)   --  sudo cp rabbitmqadmin  /usr/local/bin
+  200  #!/bin/bash
+  201  #Lo script si trova nella directory: /var/lib/pgsql/script/bkp_pg_db.sh   con i diritti dell'utente: postgres
+  202  #settings
+  203  DATABASES=( postgres CheckListManager )
+  204  DAYOFWEEK=$(date +%F_%H_%M) 
+  205  BACKUP_PATH="/var/lib/pgsql/9.6/backups"
+  206  LOG_PATH="/var/lib/pgsql/9.6/backups/logs"
+  207  PGDUMP_PATH="/usr/pgsql-9.6/bin"
+  208  #procedure
+  209  echo "Inizio Backup" >> $LOG_PATH/log_bkp_db.log
+  210  date >> $LOG_PATH/log_bkp_db.log
+  211  for i in $(seq 0 $((${#DATABASES[@]} - 1))); do         $PGDUMP_PATH/pg_dump -Fc -U postgres "${DATABASES[$i]}" > $BACKUP_PATH/BKP_FC_${DATABASES[$i]}_$DAYOFWEEK.sql; 	if [ $? == 0 ]; then 		status=OK; 	else 		status=FAILED;                 cat message.txt | mailx -s "Backup DB CheckListManager NOT OK! - Attention!!!" daniele.pegoraro@abbvie.com; 	fi; 	echo -e "Backup ${DATABASES[$i]}: $status  File: $BACKUP_PATH/${DATABASES[$i]}_$DAYOFWEEK.sql" >> $LOG_PATH/log_bkp_db.log; done;
+  212  echo "******* remove file older 60 days ***********" >> $LOG_PATH/log_bkp_db.log
+  213  find /var/lib/pgsql/9.6/backups -type f -name '*.sql' -mtime +60 -exec rm {} \;
+  214  #find $BACKUP_PATH -type f -name '*.sql' -mtime +2 -exec rm {} \;
+  215  echo "Fine Backup" >> $LOG_PATH/log_bkp_db.log
+  216  echo "**************************************************************************" >> $LOG_PATH/log_bkp_db.log
+  217  #!/bin/bash
+  218  NAME_RESTORE_DATABASE=$1
+  219  FILE_BKP_DATABASE=$2
+  220  echo $1
+  221  echo $2
+  222  BACKUP_PATH="/var/lib/pgsql/backups"
+  223  LOG_PATH="/var/lib/pgsql/backups/logs"
+  224  # impostare directory a seconda della versione dell'eseguibile di PGRESTORE
+  225  PG_RESTORE_PATH="/usr/pgsql-13/bin"
+  226  echo "Inizio Restore: $1" >> $LOG_PATH/log_restore_db.log
+  227  date >>  $LOG_PATH/log_restore_db.log
+  228  # psql -U postgres "$1" < $BACKUP_PATH/$2
+  229  $PG_RESTORE_PATH/pg_restore -d "$1" < $BACKUP_PATH/$2
+  230  if [ $? == 0 ]; then   status=OK; else   status=FAILED; fi
+  231  echo -e "Restore $1: $status File: $2" >> $LOG_PATH/log_restore_db.log
+  232  echo "Fine Restore" >> $LOG_PATH/log_restore_db.log
+  233  echo "***********************************************************" >> $LOG_PATH/log_restore_db.log
+  234  pwd
+  235  git --version
+  236  cd C:\Users\Matematici\Documents\Repo_GitHub_test_on_Re_Ema
+  237  pwc
+  238  pwd
+  239  clear
+  240  pwd
+  241  C:\Users\Matematici\Documents\Repo_GitHub_test_on_Re_Emcda
+  242  cd Documentnti
+  243  pwd
+  244  cd C:\\Users\\Matematici\\Documents\\Repo_GitHub_test_on_Re_Ema
+  245  git config --global user.name /?
+  246  git config --global user.name /?
+  247  git config
+  248  git config -l
+  249  git config --global user.name Rossi Emanuele
+  250  git config -l
+  251  git config --global user.name RossiE
+  252  pwd
+  253  cd ..
+  254  ls
+  255  cd Repository_Git_Matematici
+  256  ls
+  257  cd Navigamondo/
+  258  echo "# Navigamondo" >> README.md
+  259  git init
+  260  git add README.md
+  261  git commit -m "first commit"
+  262  exit
+  263  pwd
+  264  ls
+  265  cd Documenti
+  266  ls
+  267  cd Repo_GitHub_test_on_Re_Ema
+  268  pwd
+  269  ls -ls
+  270  cd ../testgit
+  271  ls
+  272  ls -lsa
+  273  mkdir myproject
+  274  cd myproject
+  275  git config --global user.name "Emanuele-Rossi"
+  276  git config --global --replace user.name "Emanuele-Rossi"
+  277  git --info
+  278  git --info --config-env
+  279  clear
+  280  pwd
+  281  git init
+  282  vi index.html
+  283  ls
+  284  git status
+  285  git add index.html
+  286  git status
+  287  vi README.md
+  288  vi bluestyle.css
+  289  vi index.html
+  290  git status
+  291  git add -all
+  292  git add --all
+  293  pwd
+  294  git status
+  295  git commit -m "First release of Hello World!"
+  296  git status
+  297  vi index.html
+  298  git status --short
+  299  git commit -a -m "Updated index.html with a new line"
+  300  git log
+  301  clear
+  302  git branch hello-world-images
+  303  git branch
+  304  git checkout hello-world-images
+  305  ls -ls
+  306  vi index.html
+  307  git status
+  308  pwd
+  309  git status
+  310  git add --all
+  311  git status
+  312  ls -ls
+  313  chechout master
+  314  branch
+  315  git branch
+  316  git checkout master
+  317  ls -ls
+  318  git checkout img_hello_world
+  319  git checkout hello-world-images
+  320  git commit -m "Added image to Hello World"
+  321  git checkout master
+  322  git status
+  323  git checkout hello-world-images
+  324  ls -ls
+  325  vi index.html
+  326  git checkout master
+  327  ls -ls
+  328  more index.html
+  329  vi index.html
+  330  vi index.html
+  331  git checkout -b emergency-fix
+  332  vi index.html
+  333  git stus
+  334  git status
+  335  git checkout master
+  336  git checkout emergency-fix
+  337  git add index.html
+  338  git status
+  339  git checkout master
+  340  git checkout emergency-fix
+  341  git commit -m "updated index.html with emergency fix"
+  342  git checkout master
+  343  clear
+  344  git merge emergency-fix
+  345  ls -ls
+  346  git checkout hello-world-images
+  347  vi index.html
+  348  git add --all
+  349  git commit -m "added new image"
+  350  git checkout master
+  351  git merge hello-world-images
+  352  git status
+  353  git add index.html
+  354  git status
+  355  git commit -m "merged with hello-world-images after fixing conflicts"
+  356  git remote add origin https://github.com/re-ema/hello-word.git
+  357  git push --set-upstream origin master
+  358  git remote set-url origin https://re-ema@github.com/re-ema/hello-word.git
+  359  git push --set-upstream origin master
+  360  ls -ls
+  361  more README.md 
+  362  vi README.md
+  363  clear
+  364  git fetch origin
+  365  git status
+  366  git log origin/master
+  367  git diff origin/master
+  368  git merge origin/master
+  369  git status
+  370  git status
+  371  git pull origin/master
+  372  git pull origin
+  373  git status
+  374  git lof origin/master
+  375  git log origin/master
+  376  git status
+  377  git
+  378  git commit -a -m "Updated index.html. Resized image"
+  379  git status
+  380  git push origin
+  381  git fetch 
+  382  git status
+  383  gith branch
+  384  git branch
+  385  git pull
+  386  git branch
+  387  git merge
+  388  git branch
+  389  git branch -a
+  390  git checkout html-skeleton
+  391  git pull
+  392  git branch
+  393  history > git_command_3WSchool.txt
